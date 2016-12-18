@@ -156,18 +156,6 @@
             <discovery_rules/>
             <httptests/>
             <macros>
-                <macro>
-                    <macro>{$KAD_VRRP_FILE}</macro>
-                    <value>/etc/keepalived/keepalived.conf</value>
-                </macro>
-                <macro>
-                    <macro>{$KDA_STDBY_N1}</macro>
-                    <value/>
-                </macro>
-                <macro>
-                    <macro>{$KDA_STDBY_N2}</macro>
-                    <value/>
-                </macro>
             </macros>
             <templates/>
             <screens/>
