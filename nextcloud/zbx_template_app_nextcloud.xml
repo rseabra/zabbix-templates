@@ -327,10 +327,15 @@
                     <preprocessing/>
                     <jmx_endpoint/>
                     <timeout>3s</timeout>
-                    <url>{$NCROOT}/ocs/v2.php/apps/serverinfo/api/v1/info?format=json</url>
-                    <query_fields/>
+                    <url>{$NCROOT}/ocs/v2.php/apps/serverinfo/api/v1/info</url>
+                    <query_fields>
+                        <query_field>
+                            <name>format</name>
+                            <value>json</value>
+                        </query_field>
+                    </query_fields>
                     <posts/>
-                    <status_codes>200,503</status_codes>
+                    <status_codes>200,503,301</status_codes>
                     <follow_redirects>1</follow_redirects>
                     <post_type>0</post_type>
                     <http_proxy/>
@@ -1841,7 +1846,7 @@
             <macros>
                 <macro>
                     <macro>{$NCPASSWORD}</macro>
-                    <value>FIXME</value>
+                    <type>SECRET_TEXT</type>
                 </macro>
                 <macro>
                     <macro>{$NCROOT}</macro>
@@ -1849,7 +1854,7 @@
                 </macro>
                 <macro>
                     <macro>{$NCUSER}</macro>
-                    <value>mon</value>
+                    <type>SECRET_TEXT</type>
                 </macro>
             </macros>
             <templates/>
