@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.0</version>
-    <date>2023-01-08T20:39:08Z</date>
+    <date>2023-01-08T20:49:40Z</date>
     <groups>
         <group>
             <uuid>a571c0d144b14fd4a87a9d9b2aa9fcd6</uuid>
@@ -125,7 +125,13 @@
                     <history>1d</history>
                     <trends>0</trends>
                     <value_type>TEXT</value_type>
-                    <url>{$NCROOT}/ocs/v2.php/apps/serverinfo/api/v1/info?format=json</url>
+                    <url>{$NCROOT}/ocs/v2.php/apps/serverinfo/api/v1/info</url>
+                    <query_fields>
+                        <query_field>
+                            <name>format</name>
+                            <value>json</value>
+                        </query_field>
+                    </query_fields>
                     <headers>
                         <header>
                             <name>NC-Token</name>
