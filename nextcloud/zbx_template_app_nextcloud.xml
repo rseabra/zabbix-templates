@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.0</version>
-    <date>2023-01-08T20:49:40Z</date>
+    <date>2023-01-08T20:58:06Z</date>
     <groups>
         <group>
             <uuid>a571c0d144b14fd4a87a9d9b2aa9fcd6</uuid>
@@ -732,7 +732,7 @@
                             <name>Login page</name>
                             <url>{$NCROOT}/index.php/login</url>
                             <follow_redirects>NO</follow_redirects>
-                            <required>Forgot your password?</required>
+                            <required>&lt;div id=&quot;login&quot;&gt;&lt;/div&gt;</required>
                             <status_codes>200</status_codes>
                         </step>
                     </steps>
