@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.0</version>
-    <date>2023-01-08T20:58:06Z</date>
+    <date>2023-01-08T22:06:10Z</date>
     <groups>
         <group>
             <uuid>a571c0d144b14fd4a87a9d9b2aa9fcd6</uuid>
@@ -694,9 +694,9 @@
                 <item>
                     <uuid>adf61be122494c93879f16156e1dee0b</uuid>
                     <name>Cron lock</name>
-                    <key>vfs.file.time[{$LOCKPATH},change]</key>
+                    <key>vfs.file.time[{$LOCKPATH},modify]</key>
                     <delay>60s</delay>
-                    <units>s</units>
+                    <units>unixtime</units>
                     <tags>
                         <tag>
                             <tag>Application</tag>
@@ -706,14 +706,14 @@
                     <triggers>
                         <trigger>
                             <uuid>1ae2fbfc97d64bd8bf7215e0db91a8c6</uuid>
-                            <expression>(max(/Template App Nextcloud/vfs.file.time[{$LOCKPATH},change],{$LOCKTIMECRITICAL})-min(/Template App Nextcloud/vfs.file.time[{$LOCKPATH},change],{$LOCKTIMECRITICAL}))=0</expression>
+                            <expression>fuzzytime(/Template App Nextcloud/vfs.file.time[{$LOCKPATH},modify],{$LOCKTIMECRITICAL})=0</expression>
                             <name>NextCloud cron not running!</name>
                             <priority>HIGH</priority>
                             <description>NextCloud cron not running for over {$LOCKTIMECRITICAL} seconds.</description>
                         </trigger>
                         <trigger>
                             <uuid>7d160c56e0fd49669c790720ad284e80</uuid>
-                            <expression>(max(/Template App Nextcloud/vfs.file.time[{$LOCKPATH},change],{$LOCKTIMEWARN})-min(/Template App Nextcloud/vfs.file.time[{$LOCKPATH},change],{$LOCKTIMEWARN}))=0</expression>
+                            <expression>fuzzytime(/Template App Nextcloud/vfs.file.time[{$LOCKPATH},modify],{$LOCKTIMEWARN})=0</expression>
                             <name>NextCloud cron not running!</name>
                             <priority>WARNING</priority>
                             <description>NextCloud cron not running for over {$LOCKTIMEWARN} seconds.</description>
@@ -751,11 +751,11 @@
                 </macro>
                 <macro>
                     <macro>{$LOCKTIMECRITICAL}</macro>
-                    <value>600</value>
+                    <value>660</value>
                 </macro>
                 <macro>
                     <macro>{$LOCKTIMEWARN}</macro>
-                    <value>300</value>
+                    <value>360</value>
                 </macro>
                 <macro>
                     <macro>{$NCROOT}</macro>
