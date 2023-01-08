@@ -8,6 +8,7 @@ Instructions:
    * Generate a token with `apg -m 20 -M SNCL` or anything that provides a good random string
    * Register it into Nextcloud with `sudo -u apache ./occ config:app:set serverinfo token --value MySecretTokenGeneratedAbove`
    * Test it with `curl -H 'NC-Token: MySecretTokenGeneratedAbove' 'https://cloud.1407.org/ocs/v2.php/apps/serverinfo/api/v1/info?format=json'`
+ * Use my cron script in crontab for Nextcloud's cron (eg `*/5 * * * * /usr/local/bin/nc-cron.sh` ) or adjust your own to add the same logic
  * In Zabbix, create a host for your site and add the template, then proceed to define the  `inherited macros`
    * `NCTOKEN` with the app token previiusly created
    * `NCROOT` with your Nextcloud root (eg https://your.clou.de/ )
